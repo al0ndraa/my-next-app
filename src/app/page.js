@@ -1,5 +1,6 @@
 import Image from "next/image";
-
+import Counter from './countercomponent';
+import './style.css';
 export default function Home() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
@@ -55,11 +56,24 @@ export default function Home() {
             href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
             target="_blank"
             rel="noopener noreferrer"
+            
           >
             Documentation
           </a>
         </div>
-      </main>
+<div className="mt-8 flex flex-col items-center gap-8">
+  <div className="text-center">
+    <h2 className="mb-4 text-xl font-semibold">Default Counter</h2>
+      <Counter />
+</div>
+  <div className="text-center">
+    <h2 className="mb-4 text-xl font-semibold">Custom Counter</h2>
+      <Counter initialCount={5} initialStep={2} />
+  </div>
+  </div>
+  <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
     </div>
+  </main>
+  </div>
   );
 }
